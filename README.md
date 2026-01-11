@@ -21,4 +21,70 @@ Weather API → Extract → Transform → Load
 
 ---
 
-## 📂 Project Structure
+DAG Details
+
+DAG Name: hourly_weather_etl
+Schedule: Hourly
+
+Tasks:
+
+extract_weather – Fetches weather data from API
+
+transform_weather – Cleans and formats raw data
+
+load_weather – Loads processed data (optional)
+
+Setup Instructions
+
+Clone the repository
+git clone <repository-url>
+cd airflow
+
+Create virtual environment
+python3.10 -m venv .venv
+source .venv/bin/activate
+
+Install dependencies
+pip install -r requirements.txt
+
+Initialize Airflow
+airflow db init
+
+Start Airflow services
+airflow scheduler
+airflow webserver
+
+Airflow UI will be available at:
+http://localhost:8080
+
+Running the Pipeline
+
+Open Airflow UI
+
+Enable the hourly_weather_etl DAG
+
+Trigger the DAG manually or wait for the scheduled run
+
+Monitor task logs for execution status
+
+Key Learnings
+
+DAG creation and scheduling in Apache Airflow
+
+ETL pipeline design
+
+PythonOperator usage
+
+Task dependencies and execution order
+
+Debugging Airflow logs
+
+Future Enhancements
+
+Load data into PostgreSQL or AWS S3
+
+Add data validation and quality checks
+
+Implement alerts and retries
+
+Dockerize the Airflow environment
